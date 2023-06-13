@@ -10,6 +10,8 @@
 	- Doesn't detect tampers or hooks. Figure out yourself.
 	- Doesn't ensure uncrackeable code or 100% protected table.
 	- Probably getgc bypasses it, idk I didn't tested.
+
+	btw don't rely on this 100%.
 ]]--
 
 local protable = newproxy(true);
