@@ -2,14 +2,13 @@
 
 --[[
 	Pros:
-	- prevents the use of pairs/ipairs/next/foreach
-	- using newcclosure makes impossible to get constants/upvalues
+	- prevents the use of pairs/ipairs/next/foreach.
+	- using newcclosure makes impossible to get constants/upvalues. (didn't tested enough tho)
 	- using numbers/letters/patterns prevents having an idea of what the function does. (ex: if the function is originally called "getplayers", you will have an idea of what it does, you can just randomize the index key.)
 
 	Cons:
 	- Doesn't detect tampers or hooks. Figure out yourself.
-	- Doesn't ensure uncrackeable code or 100% protected table.
-	- Probably getgc bypasses it, idk I didn't tested.
+	- Probably getgc bypasses it, idk I didn't tested enough with getgc.
 
 	btw don't rely on this 100%.
 ]]--
@@ -20,7 +19,7 @@ local meta = getmetatable(protable)
 meta.__index = function(_, b)
 	local pt1 = newproxy(true);
 	local mt1 = getmetatable(pt1)
-    if b == "1" then -- imagine this function gets the players ok?
+    if b == "1" then
         mt1.__call = function(_,b,c) -- use newcclosure instead.
             print("FUNCION 1")
 			return c*b;
