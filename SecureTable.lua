@@ -1,16 +1,7 @@
--- Made by @Aviva
+-- Made by @WasVeil
 
 --[[
-	Pros:
-	- prevents the use of pairs/ipairs/next/foreach.
-	- using newcclosure makes impossible to get constants/upvalues. (didn't tested enough tho)
-	- using numbers/letters/patterns prevents having an idea of what the function does. (ex: if the function is originally called "getplayers", you will have an idea of what it does, you can just randomize the index key.)
-
-	Cons:
-	- Doesn't detect tampers or hooks. Figure out yourself.
-	- Probably getgc bypasses it, idk I didn't tested enough with getgc.
-
-	btw don't rely on this 100%.
+	This isn't good, will only prevent detect some indexes and prevents listing of keys/values.
 ]]--
 
 local protable = newproxy(true);
